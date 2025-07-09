@@ -87,6 +87,7 @@ public Node findNthFromEnd(int n){
 
 </td>
 </tr>
+
 <tr>
 <td> Convert Binary Number in a Linked List to Integer </td>
 <td> Visual TBD </td>
@@ -113,5 +114,47 @@ public int binaryToDecimal(){
 
 </td>
 </tr>
+
+<tr>
+<td> #86 Partition List </td>
+<td> Visual TBD </td>
+<td>
+  
+```java
+public void partitionList(int x){
+    if (head == null) return;
+
+    //Less than elements list
+    Node dummy1 = new Node(0); //First node of less than elements list
+    Node curr1 = dummy1; //Pointer to last node of less than elements list
+    
+    //Greater than elements list
+    Node dummy2 = new Node(0);
+    Node curr2 = dummy2;
+    
+    Node curr = head;
+    
+    while(curr != null){
+        if (curr.value < x){
+            curr1.next = curr;
+            curr1 = curr;
+            
+        }else{
+            curr2.next = curr;
+            curr2 = curr;
+        }
+        curr = curr.next;
+    }
+    curr2.next = null;
+    
+    curr1.next = dummy2.next;
+    head = dummy1.next;
+    
+}
+```
+
+</td>
+</tr>
+
 </table>
 
