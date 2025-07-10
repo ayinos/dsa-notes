@@ -2,17 +2,9 @@
 Notes on dsa &amp; leetcode problems.
 
 # LinkedList
+## Linked List Problems
 
-<table>
-<tr>
-<td><b>Problem</b></td> <td><b>Visual</b></td> <td><b>Code</b></td>
-</tr>
-  
-<tr>
-<td> Find Middle Node </td>
-<td> Visual TBD </td>
-<td>
-
+### Find Middle Node 
 ```java
 public Node findMiddleNode(){
     Node slow = head;
@@ -27,14 +19,7 @@ public Node findMiddleNode(){
 }
 ```
 
-</td>
-</tr>
-
-<tr>
-<td> Has Loop </td>
-<td> Visual TBD </td>
-<td>
-  
+### Has Loop
 ```java
  public boolean hasLoop(){
       Node slow = head;
@@ -51,15 +36,8 @@ public Node findMiddleNode(){
       return false;
   }
 ```
+### Find Nth Node From End
 
-</td>
-</tr>
-
-<tr>
-<td> Find Nth Node From End </td>
-<td> Visual TBD </td>
-<td>
-  
 ```java
 public Node findNthFromEnd(int n){
     Node slow = head;
@@ -85,14 +63,8 @@ public Node findNthFromEnd(int n){
 }
 ```
 
-</td>
-</tr>
+### Convert Binary Number in a Linked List to Integer
 
-<tr>
-<td> Convert Binary Number in a Linked List to Integer </td>
-<td> Visual TBD </td>
-<td>
-  
 ```java
 public int binaryToDecimal(){
     Node curr = head;
@@ -112,14 +84,7 @@ public int binaryToDecimal(){
 }
 ```
 
-</td>
-</tr>
-
-<tr>
-<td> 86. Partition List </td>
-<td> Visual TBD </td>
-<td>
-  
+### 86. Partition List 
 ```java
 public void partitionList(int x){
     if (head == null) return;
@@ -153,14 +118,7 @@ public void partitionList(int x){
 }
 ```
 
-</td>
-</tr>
-
-<tr>
-<td> 92. Reverse Linked List II </td>
-<td> Visual TBD </td>
-<td>
-  
+### 92. Reverse Linked List II  
 ```java
 public ListNode reverseBetween(ListNode head, int left, int right) {
 
@@ -199,14 +157,7 @@ public ListNode reverseBetween(ListNode head, int left, int right) {
 }
 ```
 
-</td>
-</tr>
-
-<tr>
-<td> 24. Swap Nodes in Pairs </td>
-<td> Visual TBD </td>
-<td>
-  
+### 24. Swap Nodes in Pairs
 ```java
 public ListNode swapPairs(ListNode head) {
     ListNode dummy = new ListNode(0, head);
@@ -237,9 +188,3 @@ public ListNode swapPairs(ListNode head) {
     return dummy.next;
 }
 ```
-
-</td>
-</tr>
-
-</table>
-
