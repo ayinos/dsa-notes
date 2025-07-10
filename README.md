@@ -296,3 +296,22 @@ public Node removeLast(){
     }
 }
 ```
+
+### Prepend
+```java
+    public void prepend(int value){
+        Node node = new Node(value);
+        
+        if(length == 0){
+            head = tail = node;
+        }
+        else{
+            node.next = head;
+            head.prev = node;
+            head = node;
+        }
+        length++;
+    }
+```
+
+
