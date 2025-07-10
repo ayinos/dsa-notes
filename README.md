@@ -314,4 +314,25 @@ public Node removeLast(){
     }
 ```
 
+### Renove First
+```java
+    public Node removeFirst(){
+        
+        if(length == 0)
+            return null;
+        
+        Node first = head;
+        
+        if (length == 1){
+            head = tail = null;
+        }
+        else{
+            head = head.next;
+            head.prev = null;
+            first.next = null;
+        }
+        length --;
+        return first;
+    }
+```
 
