@@ -116,7 +116,7 @@ public int binaryToDecimal(){
 </tr>
 
 <tr>
-<td> #86 Partition List </td>
+<td> 86. Partition List </td>
 <td> Visual TBD </td>
 <td>
   
@@ -151,6 +151,56 @@ public void partitionList(int x){
     head = dummy1.next;
     
 }
+```
+
+</td>
+</tr>
+
+<tr>
+<td> 92. Reverse Linked List II </td>
+<td> Visual TBD </td>
+<td>
+  
+```java
+public ListNode reverseBetween(ListNode head, int left, int right) {
+
+    //Create a dummy node pointing to the head
+    ListNode dummy = new ListNode (0, head);
+
+    //For saving the node before left
+    ListNode leftPrevNode = dummy;
+    ListNode curr = head;
+
+    //Move curr to left position & leftPrevNode to the node before left.
+    //The reference to node before left is needed,
+    //since we need to point to to the right end node.
+    for(int i = 0; i<left-1;i++){
+        leftPrevNode = curr;
+        curr = curr.next;
+    }
+
+    ListNode prev = null;
+
+    for(int i=0; i<right-left+1; i++){
+        //Save curr since we are going to break curr->next to curr->prev
+        //and we need curr.next to iterate.
+        ListNode tempNext = curr.next;
+        curr.next = prev;//Reverse link
+        prev = curr; //Move prev pointer ahead
+        curr = tempNext; //Move curr pointer ahead
+    }
+
+    //Update pointers
+    leftPrevNode.next.next = curr;
+    leftPrevNode.next = prev;
+
+    //Return head
+    return dummy.next;
+}
+```
+
+</td>
+</tr>
 ```
 
 </td>
