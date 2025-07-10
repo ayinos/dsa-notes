@@ -211,7 +211,8 @@ public ListNode reverseBetween(ListNode head, int left, int right) {
 public ListNode swapPairs(ListNode head) {
     ListNode dummy = new ListNode(0, head);
 
-    //Pointer to node previous to the pair. Needed so that the link between pairs is maintained.
+    //Pointer to node previous to the pair.
+    //Needed so that the link between pairs is maintained.
     ListNode prevToPair = dummy; 
 
     //First element in the pair
