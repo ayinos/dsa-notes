@@ -253,3 +253,46 @@ public class DoublyLinkedList {
     }
 }
 ```
+
+### Append
+```java
+public void append(int value){
+    Node node = new Node(value);
+    
+    if(tail != null){
+        node.prev = tail;
+        tail.next = node;
+        tail = node;
+    }
+    else{
+        tail = head = node;
+    }
+    length++;
+}
+```
+
+### Remove Last
+```java
+public Node removeLast(){
+    if (length == 0){
+        return null;
+    }
+    else if(length == 1){
+        Node temp = tail;
+        head = tail = null;
+        length --;
+        return temp;
+    }
+    else{
+        Node temp = tail;
+        
+        tail = tail.prev;
+        tail.next = null;
+        temp.prev = null;
+        length --;
+        
+        return temp;
+        
+    }
+}
+```
