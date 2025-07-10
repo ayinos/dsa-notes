@@ -5,14 +5,14 @@ Notes on dsa &amp; leetcode problems.
 
 <table>
 <tr>
-<td><b>Problem</b></td> <td><b>Visual</b></td><td><b>Code</b></td>
+<td><b>Problem</b></td> <td><b>Visual</b></td> <td><b>Code</b></td>
 </tr>
   
 <tr>
 <td> Find Middle Node </td>
 <td> Visual TBD </td>
 <td>
-  
+
 ```java
 public Node findMiddleNode(){
     Node slow = head;
@@ -197,10 +197,6 @@ public ListNode reverseBetween(ListNode head, int left, int right) {
     //Return head
     return dummy.next;
 }
-```
-
-</td>
-</tr>
 ```
 
 </td>
