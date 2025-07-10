@@ -202,5 +202,43 @@ public ListNode reverseBetween(ListNode head, int left, int right) {
 </td>
 </tr>
 
+<tr>
+<td> 24. Swap Nodes in Pairs </td>
+<td> Visual TBD </td>
+<td>
+  
+```java
+public ListNode swapPairs(ListNode head) {
+    ListNode dummy = new ListNode(0, head);
+
+    //Pointer to node previous to the pair. Needed so that the link between pairs is maintained.
+    ListNode prevToPair = dummy; 
+
+    //First element in the pair
+    ListNode first = head; 
+
+    while(first != null && first.next != null){
+        ListNode second = first.next; //Second element in the pair.
+      
+        //Swap
+        prevToPair.next = second;
+        first.next = second.next;
+        second.next = first;
+
+        //Move pointers ahead.
+        //After swapping first element is swapped to second. 
+        //Hence first becomes the new prevToPair.
+        prevToPair = first; 
+        //Move ahead first as well.
+        first = first.next;
+    }
+
+    return dummy.next;
+}
+```
+
+</td>
+</tr>
+
 </table>
 
