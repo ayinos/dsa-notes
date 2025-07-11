@@ -376,33 +376,80 @@ public boolean set(int index, int value){
 
 ### Insert
 ```java
-    public boolean insert(int index, int value){
-        
-        if(index<0 || index>length)
-            return false;
-        
-        if(index == 0){
-            prepend(value);
-             return true;
-        }
-        else if(index == length){
-            append(value);
-            return true;
-        }
-        else{
-            Node node = new Node(value);
-            Node prevNode = get(index-1);
-            Node afterNode = prevNode.next;
-            
-            node.prev = prevNode;
-            node.next = afterNode;
-            
-            prevNode.next = node;
-            afterNode.prev = node;
-            length++;
-            return true;
-        }
+public boolean insert(int index, int value){
+    
+    if(index<0 || index>length)
+        return false;
+    
+    if(index == 0){
+        prepend(value);
+         return true;
     }
+    else if(index == length){
+        append(value);
+        return true;
+    }
+    else{
+        Node node = new Node(value);
+        Node prevNode = get(index-1);
+        Node afterNode = prevNode.next;
+        
+        node.prev = prevNode;
+        node.next = afterNode;
+        
+        prevNode.next = node;
+        afterNode.prev = node;
+        length++;
+        return true;
+    }
+}
 ```
 
+### Remove
+```java
+public Node remove(int index){
+    if(index < 0 || index >= length) 
+        return null;
+        
+    if(index == 0) {
+        return removeFirst();
+    }
+    
+    if(index == length-1) {
+        return removeLast();
+    }
+    
+    Node node = get(index);
+    Node before = node.prev;
+    Node after = node.next;
+    
+    before.next = after;
+    after.prev = before;
+    
+    node.prev = null;
+    node.next = null;
+    
+    length--;
+    
+    return node;
+}
+```
 
+## Doubly Linked List Problems
+
+### DLL Palindrome Checker
+```java
+public boolean isPalindrome(){
+    Node left = head;
+    Node right = tail;
+    
+    while(left != right){
+        if(left.value != right.value)
+            return false;
+        left = left.next;
+        right = right.prev;
+    }
+    
+    return true;
+}
+```
