@@ -374,4 +374,35 @@ public boolean set(int index, int value){
 }
 ```
 
+### Insert
+```java
+    public boolean insert(int index, int value){
+        
+        if(index<0 || index>length)
+            return false;
+        
+        if(index == 0){
+            prepend(value);
+             return true;
+        }
+        else if(index == length){
+            append(value);
+            return true;
+        }
+        else{
+            Node node = new Node(value);
+            Node prevNode = get(index-1);
+            Node afterNode = prevNode.next;
+            
+            node.prev = prevNode;
+            node.next = afterNode;
+            
+            prevNode.next = node;
+            afterNode.prev = node;
+            length++;
+            return true;
+        }
+    }
+```
+
 
